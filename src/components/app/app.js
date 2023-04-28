@@ -27,7 +27,7 @@ const App = () => {
 
     apiService.getResource(category, activePage)
       .then(({hits, totalHits}) => {
-        setResponse([...response, ...hits]);
+        setResponse(state => [...state, ...hits]);
         setError(null);
         setTotalHits(totalHits);
         setStatus(RESOLVED);
